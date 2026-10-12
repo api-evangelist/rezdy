@@ -1,0 +1,160 @@
+generated: '2026-10-12'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/rezdy-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on developers.rezdy.com, rezdy.com, support.rezdy.com, app.rezdy.com;
+  verdict opaque (https://support.rezdy.com/mcp answered 401: the edge authenticates before it routes, which proves nothing either way). Candidate
+  tools below are derived from the 29 operation(s) in the provider''s own OpenAPI (29 listed); they describe what a server WOULD expose, not one
+  that exists.'
+tools:
+- name: get_availability
+  operationId: get_availability
+  method: GET
+  path: /availability
+  description: Search availability
+- name: delete_bookings
+  operationId: delete_bookings
+  method: DELETE
+  path: /bookings
+  description: Cancel booking
+- name: get_bookings
+  operationId: get_bookings
+  method: GET
+  path: /bookings
+  description: Search bookings
+- name: post_bookings
+  operationId: post_bookings
+  method: POST
+  path: /bookings
+  description: Create booking
+- name: put_bookings
+  operationId: put_bookings
+  method: PUT
+  path: /bookings
+  description: Update booking
+- name: post_bookings_quote
+  operationId: post_bookings_quote
+  method: POST
+  path: /bookings/quote
+  description: Quote booking
+- name: delete_bookings_ordernumber
+  operationId: delete_bookings_ordernumber
+  method: DELETE
+  path: /bookings/{ordernumber}
+  description: Cancel booking
+- name: get_bookings_ordernumber
+  operationId: get_bookings_ordernumber
+  method: GET
+  path: /bookings/{ordernumber}
+  description: Get booking
+- name: put_bookings_ordernumber
+  operationId: put_bookings_ordernumber
+  method: PUT
+  path: /bookings/{ordernumber}
+  description: Update booking
+- name: get_categories
+  operationId: get_categories
+  method: GET
+  path: /categories
+  description: Categories get Search categories
+- name: get_categories_categoryid
+  operationId: get_categories_categoryid
+  method: GET
+  path: /categories/{categoryid}
+  description: Get category
+- name: get_companies_companyalias
+  operationId: get_companies_companyalias
+  method: GET
+  path: /companies/{companyalias}
+  description: Get company by alias
+- name: delete_manifest_manifestid
+  operationId: delete_manifest_manifestid
+  method: DELETE
+  path: /manifest/{manifestid}
+  description: Remove order item check‑in
+- name: put_manifest_manifestid
+  operationId: put_manifest_manifestid
+  method: PUT
+  path: /manifest/{manifestid}
+  description: Check‑in order item
+- name: get_products
+  operationId: get_products
+  method: GET
+  path: /products
+  description: Search products
+- name: post_products
+  operationId: post_products
+  method: POST
+  path: /products
+  description: Create product
+- name: delete_products_productcode
+  operationId: delete_products_productcode
+  method: DELETE
+  path: /products/{productcode}
+  description: Delete product
+- name: post_products_productcode
+  operationId: post_products_productcode
+  method: POST
+  path: /products/{productcode}
+  description: Create product
+- name: put_products_productcode
+  operationId: put_products_productcode
+  method: PUT
+  path: /products/{productcode}
+  description: Update product
+- name: post_products_productcode_images
+  operationId: post_products_productcode_images
+  method: POST
+  path: /products/{productcode}/images
+  description: Add product image
+- name: delete_products_productcode_images_imageid
+  operationId: delete_products_productcode_images_imageid
+  method: DELETE
+  path: /products/{productcode}/images/{imageid}
+  description: Remove product image
+- name: get_products_productcode_pickups
+  operationId: get_products_productcode_pickups
+  method: GET
+  path: /products/{productcode}/pickups
+  description: Get product pickups
+- name: get_resources
+  operationId: get_resources
+  method: GET
+  path: /resources
+  description: List resources
+- name: get_resources_session
+  operationId: get_resources_session
+  method: GET
+  path: /resources/session
+  description: Get session resources
+- name: delete_resources_resourceid_session_sessionid
+  operationId: delete_resources_resourceid_session_sessionid
+  method: DELETE
+  path: /resources/{resourceid}/session/{sessionid}
+  description: Remove session resource
+- name: put_resources_resourceid_session_sessionid
+  operationId: put_resources_resourceid_session_sessionid
+  method: PUT
+  path: /resources/{resourceid}/session/{sessionid}
+  description: Add session resource
+- name: get_resources_resourceid_sessions
+  operationId: get_resources_resourceid_sessions
+  method: GET
+  path: /resources/{resourceid}/sessions
+  description: Get resource sessions
+- name: get_v1_availability
+  operationId: get_v1_availability
+  method: GET
+  path: /v1/availability
+  description: Search availability
+- name: get_vouchers
+  operationId: get_vouchers
+  method: GET
+  path: /vouchers
+  description: Search vouchers

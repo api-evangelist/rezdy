@@ -1,0 +1,23 @@
+generated: '2026-10-12'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://rezdy.com/pricing/
+sources:
+- https://rezdy.com/pricing/
+name: Rezdy pricing
+audience: business-product
+pricing_basis: per-seat
+plans:
+- name: Foundation
+  price_text: $49 per month + 3% per online booking*
+  price: 49
+  description: For businesses looking to get bookings online.
+- name: Accelerate
+  price_text: $99 per month + 3% per online booking*
+  price: 99
+  description: For businesses looking to step up growth.
+- name: Expansion
+  price_text: $249 per month + 3% per online booking*
+  price: 249
+  description: For businesses looking for greater control and insight.
+docs: https://rezdy.com/pricing/

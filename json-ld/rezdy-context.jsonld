@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "@vocab": "https://rezdy.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rezdy": "https://rezdy.com/schema#",
+    "PostBookingsRequest": "rezdy:PostBookingsRequest",
+    "customer": {
+      "@id": "rezdy:customer",
+      "@type": "xsd:string"
+    },
+    "items": {
+      "@id": "rezdy:items",
+      "@type": "xsd:string"
+    },
+    "payments": {
+      "@id": "rezdy:payments",
+      "@type": "xsd:string"
+    },
+    "PutBookingsRequest": "rezdy:PutBookingsRequest",
+    "resellerReference": {
+      "@id": "rezdy:resellerReference",
+      "@type": "xsd:string"
+    },
+    "resellerComments": {
+      "@id": "rezdy:resellerComments",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "rezdy:status",
+      "@type": "xsd:string"
+    },
+    "PutBookingsOrdernumberRequest": "rezdy:PutBookingsOrdernumberRequest",
+    "GetCompaniesCompanyaliasResponse": "rezdy:GetCompaniesCompanyaliasResponse",
+    "company": {
+      "@id": "rezdy:company"
+    },
+    "PostProductsRequest": "rezdy:PostProductsRequest",
+    "product": {
+      "@id": "rezdy:product"
+    },
+    "PostProductsProductcodeRequest": "rezdy:PostProductsProductcodeRequest",
+    "name": {
+      "@id": "rezdy:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "rezdy:description",
+      "@type": "xsd:string"
+    },
+    "priceOptions": {
+      "@id": "rezdy:priceOptions",
+      "@type": "xsd:string"
+    },
+    "PutProductsProductcodeRequest": "rezdy:PutProductsProductcodeRequest",
+    "PostProductsProductcodeImagesRequest": "rezdy:PostProductsProductcodeImagesRequest",
+    "image": {
+      "@id": "rezdy:image"
+    },
+    "GetProductsProductcodePickupsResponse": "rezdy:GetProductsProductcodePickupsResponse",
+    "pickups": {
+      "@id": "rezdy:pickups",
+      "@container": "@list"
+    },
+    "GetResourcesResponse": "rezdy:GetResourcesResponse",
+    "resources": {
+      "@id": "rezdy:resources",
+      "@container": "@list"
+    },
+    "GetResourcesSessionResponse": "rezdy:GetResourcesSessionResponse",
+    "sessions": {
+      "@id": "rezdy:sessions",
+      "@container": "@list"
+    },
+    "GetResourcesResourceidSessionsResponse": "rezdy:GetResourcesResourceidSessionsResponse",
+    "GetVouchersResponse": "rezdy:GetVouchersResponse",
+    "vouchers": {
+      "@id": "rezdy:vouchers",
+      "@container": "@list"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Rezdy API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Rezdy's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-12) from openapi/_ae-authored/rezdy-openapi-generated.yml.",
+  "dcterms:created": "2026-10-12",
+  "dcterms:source": [
+    "openapi/_ae-authored/rezdy-openapi-generated.yml"
+  ]
+}

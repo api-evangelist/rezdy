@@ -1,0 +1,717 @@
+openapi: 3.1.0
+info:
+  title: Rezdy API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 29 operation(s) read from 2 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Rezdy has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 29
+    pages-with-code: 0
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developers.rezdy.com/rezdyapi/index-agent.html
+  - https://developers.rezdy.com/rezdyapi/index-supplier.html
+servers:
+- url: https://api.rezdy-staging.com
+paths:
+  /availability:
+    get:
+      operationId: get_availability
+      tags:
+      - Availability
+      summary: Search availability
+      description: Loads product availability for given product codes and time range.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: productCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Code of the product to check availability for
+      - name: startTimeLocal
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Start of the period in local time
+      - name: endTimeLocal
+        in: query
+        required: true
+        schema:
+          type: string
+        description: End of the period in local time
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /bookings:
+    delete:
+      operationId: delete_bookings
+      tags:
+      - Bookings
+      summary: Cancel booking
+      description: Cancels a booking; request body is empty.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_bookings
+      tags:
+      - Bookings
+      summary: Search bookings
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_bookings
+      tags:
+      - Bookings
+      summary: Create booking
+      description: Creates a new booking for a product with specified quantities and payment.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostBookingsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_bookings
+      tags:
+      - Bookings
+      summary: Update booking
+      description: Amends an existing booking with additional information.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBookingsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /bookings/quote:
+    post:
+      operationId: post_bookings_quote
+      tags:
+      - Bookings
+      summary: Quote booking
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /bookings/{ordernumber}:
+    delete:
+      operationId: delete_bookings_ordernumber
+      tags:
+      - Bookings
+      summary: Cancel booking
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: ordernumber
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_bookings_ordernumber
+      tags:
+      - Bookings
+      summary: Get booking
+      description: Retrieves a specific booking by its order number.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: ordernumber
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_bookings_ordernumber
+      tags:
+      - Bookings
+      summary: Update booking
+      description: Updates a specific booking identified by order number.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: ordernumber
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBookingsOrdernumberRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /categories:
+    get:
+      operationId: get_categories
+      tags:
+      - Categories
+      summary: Categories get Search categories
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /categories/{categoryid}:
+    get:
+      operationId: get_categories_categoryid
+      tags:
+      - Categories
+      summary: Get category
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: categoryid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /companies/{companyalias}:
+    get:
+      operationId: get_companies_companyalias
+      tags:
+      - Companies
+      summary: Get company by alias
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: companyalias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCompaniesCompanyaliasResponse'
+      x-evidence:
+        kind: documentation
+  /manifest/{manifestid}:
+    delete:
+      operationId: delete_manifest_manifestid
+      tags:
+      - Manifest
+      summary: Remove order item check‑in
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: manifestid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at manifestId
+    put:
+      operationId: put_manifest_manifestid
+      tags:
+      - Manifest
+      summary: Check‑in order item
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: manifestid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at manifestId
+  /products:
+    get:
+      operationId: get_products
+      tags:
+      - Products
+      summary: Search products
+      description: Loads and caches Rezdy product details; can be filtered by various attributes.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Pagination offset (default 0)
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Pagination limit (default 100, max 100)
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_products
+      tags:
+      - Products
+      summary: Create product
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}:
+    delete:
+      operationId: delete_products_productcode
+      tags:
+      - Products
+      summary: Delete product
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_products_productcode
+      tags:
+      - Products
+      summary: Create product
+      description: Creates a new product with the given product code.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsProductcodeRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_products_productcode
+      tags:
+      - Products
+      summary: Update product
+      description: Updates details of an existing product.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutProductsProductcodeRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}/images:
+    post:
+      operationId: post_products_productcode_images
+      tags:
+      - Products
+      summary: Add product image
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsProductcodeImagesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}/images/{imageid}:
+    delete:
+      operationId: delete_products_productcode_images_imageid
+      tags:
+      - Products
+      summary: Remove product image
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: imageid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}/pickups:
+    get:
+      operationId: get_products_productcode_pickups
+      tags:
+      - Products
+      summary: Get product pickups
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProductsProductcodePickupsResponse'
+      x-evidence:
+        kind: documentation
+  /resources:
+    get:
+      operationId: get_resources
+      tags:
+      - Resources
+      summary: List resources
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResourcesResponse'
+      x-evidence:
+        kind: documentation
+  /resources/session:
+    get:
+      operationId: get_resources_session
+      tags:
+      - Resources
+      summary: Get session resources
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResourcesSessionResponse'
+      x-evidence:
+        kind: documentation
+  /resources/{resourceid}/session/{sessionid}:
+    delete:
+      operationId: delete_resources_resourceid_session_sessionid
+      tags:
+      - Resources
+      summary: Remove session resource
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: resourceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sessionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_resources_resourceid_session_sessionid
+      tags:
+      - Resources
+      summary: Add session resource
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: resourceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sessionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /resources/{resourceid}/sessions:
+    get:
+      operationId: get_resources_resourceid_sessions
+      tags:
+      - Resources
+      summary: Get resource sessions
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: resourceid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResourcesResourceidSessionsResponse'
+      x-evidence:
+        kind: documentation
+  /v1/availability:
+    get:
+      operationId: get_v1_availability
+      tags:
+      - Availability
+      summary: Search availability
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /vouchers:
+    get:
+      operationId: get_vouchers
+      tags:
+      - Vouchers
+      summary: Search vouchers
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetVouchersResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostBookingsRequest:
+      type: object
+      properties:
+        customer:
+          type: string
+          description: Customer information (firstName, lastName, phone, etc.)
+        items:
+          type: string
+          description: Array of booking items with productCode, startTimeLocal and quantities
+        payments:
+          type: string
+          description: Payment details when using manual payment
+      required:
+      - customer
+      - items
+    PutBookingsRequest:
+      type: object
+      properties:
+        resellerReference:
+          type: string
+          description: Reference string for the reseller
+        resellerComments:
+          type: string
+          description: Comments visible to both agent and supplier
+        status:
+          type: string
+          description: Booking status (e.g., CONFIRMED)
+        customer:
+          type: string
+          description: Customer object with id and details
+        items:
+          type: string
+          description: Array of items with possible pickupLocation updates
+    PutBookingsOrdernumberRequest:
+      type: object
+      properties:
+        resellerReference:
+          type: string
+          description: Reseller reference
+        status:
+          type: string
+          description: New status
+        customer:
+          type: string
+          description: Updated customer details
+    GetCompaniesCompanyaliasResponse:
+      type: object
+      properties:
+        company:
+          type: object
+          description: Company details.
+    PostProductsRequest:
+      type: object
+      properties:
+        product:
+          type: object
+          description: Product data as described in the API documentation.
+      required:
+      - product
+    PostProductsProductcodeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Product name
+        description:
+          type: string
+          description: Full description
+        priceOptions:
+          type: string
+          description: Array of price option objects
+      required:
+      - name
+      - priceOptions
+    PutProductsProductcodeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Updated product name
+        description:
+          type: string
+          description: Updated description
+        priceOptions:
+          type: string
+          description: Updated price options
+    PostProductsProductcodeImagesRequest:
+      type: object
+      properties:
+        image:
+          type: object
+          description: Image data (e.g., URL or file payload) as defined by the API.
+      required:
+      - image
+    GetProductsProductcodePickupsResponse:
+      type: object
+      properties:
+        pickups:
+          type: array
+          description: Pickup locations associated with the product.
+    GetResourcesResponse:
+      type: object
+      properties:
+        resources:
+          type: array
+          description: List of resources.
+    GetResourcesSessionResponse:
+      type: object
+      properties:
+        sessions:
+          type: array
+          description: Resources for a session.
+    GetResourcesResourceidSessionsResponse:
+      type: object
+      properties:
+        sessions:
+          type: array
+          description: Sessions associated with the resource.
+    GetVouchersResponse:
+      type: object
+      properties:
+        vouchers:
+          type: array
+          description: List of vouchers.
+tags:
+- name: Availability
+- name: Bookings
+- name: Categories
+- name: Companies
+- name: Manifest
+- name: Products
+- name: Resources
+- name: Vouchers

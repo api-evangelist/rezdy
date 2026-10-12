@@ -1,0 +1,26 @@
+generated: '2026-10-12'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developers.rezdy.com/rezdyapi/index-webhook.html
+sources:
+- https://developers.rezdy.com/rezdyapi/index-webhook.html
+- https://rezdy.com/events/
+description: Rezdy webhooks fire POST requests with a JSON payload when specific entities are created, updated, or deleted.
+events:
+- event: new order
+  description: The webhook is fired whenever a new order is created regardless of the source.
+- event: updated order
+  description: When an existing order is updated (e.g., status changes from PROCESSING to CONFIRMED), an UPDATED_ORDER webhook is sent.
+- event: cancelled order
+  description: A webhook is sent when an order is cancelled.
+- event: new product
+  description: A webhook is sent when a new product is created.
+- event: updated product
+  description: A webhook is sent when an existing product is updated.
+- event: deleted product
+  description: A webhook is sent when a product is deleted.
+- event: new contact
+  description: A webhook is sent when a new contact is created.
+delivery:
+  retries: Currently, we do not retry failed webhooks, but this may change in the future. We may start retrying 5xx status codes.
+docs: https://developers.rezdy.com/rezdyapi/index-webhook.html

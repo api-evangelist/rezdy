@@ -1,0 +1,80 @@
+# Rezdy
+
+> Rezdy is online booking software and a channel manager for tour, activity and attraction operators, with its strongest presence in Australia and New Zealand. Operators use it to take direct bookings on their own website, manage availability and payments in one place, and sell through a large network of resellers and online travel agents (OTAs). Rezdy is part of Expedition, alongside Checkfront and Regiondo.
+
+Key facts:
+- Built for tours, activities, attractions, cruises and charters, rentals, shuttles and events.
+- Includes a booking system, a channel manager connected to resellers and OTAs, payments (RezdyPay), automated guest communications and reporting.
+- Pricing: three monthly plans plus a fee per online booking, which the operator can absorb or pass on to guests. Unlimited bookings, users and products on every plan, no lock-in contracts, and a 21-day free trial with no credit card required. See the pricing page for current rates.
+
+## Product
+- [Booking software](https://rezdy.com/booking-software/): Overview of Rezdy's online booking system for operators
+- [Channel manager](https://rezdy.com/channel-manager/): Sell through resellers and OTAs with live availability
+- [Live availability](https://rezdy.com/live-availability/): Real-time availability across direct and reseller channels
+- [RezdyPay](https://rezdy.com/rezdypay/): Rezdy's integrated payment processing
+- [Payment gateways](https://rezdy.com/payment-gateways/): Supported payment gateways
+- [Automated communications](https://rezdy.com/automated-communications/): Automated booking emails and guest messages
+- [Reporting and analytics](https://rezdy.com/reporting-tools-analytics/): Booking and revenue reporting
+- [Gift cards and promo codes](https://rezdy.com/giftcards-promo-codes/): Sell gift cards and run promotions
+- [Book Now button and website tools](https://rezdy.com/website-tools/): Add booking to an existing website
+- [Mobile app](https://rezdy.com/mobile-app/): Manage bookings and check-ins on the go
+- [Waiting list](https://rezdy.com/waiting-list/): Capture demand for sold-out sessions
+
+## Pricing
+- [Pricing](https://rezdy.com/pricing/): Current plans, what each includes, and free trial details
+- [Free trial](https://rezdy.com/rezdy-free-trial/): Start a free trial
+- [Book a demo](https://rezdy.com/book-a-demo/): Talk to the Rezdy team
+
+## Integrations and distribution
+- [Integrations](https://rezdy.com/integrations/): Apps and tools that connect to Rezdy
+- [Connectivity partners](https://rezdy.com/connectivity-partners/): OTAs and distribution partners connected to Rezdy
+- [Google Things to Do](https://rezdy.com/google-things-to-do/): List bookable experiences on Google
+- [Resellers](https://rezdy.com/resellers/): How resellers and agents sell Rezdy operators' products
+- [Why use resellers](https://rezdy.com/why-use-resellers/): The case for indirect distribution
+
+## Who it's for
+- [Tours](https://rezdy.com/tours/)
+- [Activities](https://rezdy.com/activities/)
+- [Attractions](https://rezdy.com/attractions/)
+- [Charters](https://rezdy.com/charter/)
+- [Rentals](https://rezdy.com/rentals/)
+- [Shuttles](https://rezdy.com/shuttles/)
+- [Events](https://rezdy.com/events/)
+
+## Comparisons
+- [Rezdy vs FareHarbor](https://rezdy.com/rezdy-vs-fareharbor/)
+- [Rezdy vs Peek](https://rezdy.com/rezdy-vs-peek/)
+- [Rezdy vs Xola](https://rezdy.com/rezdy-vs-xola/)
+- [Rezdy vs Bokun](https://rezdy.com/rezdy-vs-bokun/)
+
+## Top guides
+- [Tour operator software: the ultimate guide](https://rezdy.com/blog/tour-operator-software-ultimate-guide/)
+- [The ultimate guide to tourism distribution channels](https://rezdy.com/blog/the-ultimate-guide-to-tourism-distribution-channels/)
+- [What is an online booking system?](https://rezdy.com/blog/what-is-online-booking-system/)
+- [How to become a Viator supplier](https://rezdy.com/blog/how-to-become-a-viator-supplier/)
+- [SEO for tour operators](https://rezdy.com/blog/seo-for-tour-operators/)
+- [Global trends in tours and activities: the 2026 report](https://rezdy.com/blog/global-trends-in-tours-activities-the-2026-report/)
+
+## Most-read articles
+- [The importance of customer service in tourism](https://rezdy.com/blog/the-importance-of-customer-service-in-tourism/)
+- [7 examples of partnerships in tourism and travel](https://rezdy.com/blog/types-of-business-partnerships-in-tourism/)
+- [What are the main types of tourism distribution channels?](https://rezdy.com/blog/what-are-travel-and-tourism-distribution-channels/)
+- [The benefits of online booking systems for tour operators](https://rezdy.com/blog/advantages-disadvantages-online-booking-system/)
+- [35+ creative travel and tour business ideas](https://rezdy.com/blog/tours-and-travels-business-ideas-to-get-excited-about/)
+- [How to build the perfect tour itinerary: a step-by-step guide](https://rezdy.com/blog/how-to-build-the-perfect-tour-itinerary-a-step-by-step-guide/)
+- [Outbound vs inbound tour operator agents](https://rezdy.com/blog/differences-outbound-inbound-tour-operators/)
+- [Writing the perfect description for tours and travel](https://rezdy.com/blog/how-to-write-the-perfect-tour-description/)
+- [Generation X travel trends and insights](https://rezdy.com/blog/generation-x-travel-trends/)
+- [How to write a tourism newsletter](https://rezdy.com/blog/how-to-write-a-tourism-newsletter-that-captures-readers-attention/)
+- [AI search for tour operators: how to get found, understood and booked](https://rezdy.com/blog/ai-search-for-tour-operators/)
+- [eBook: the ultimate travel and tourism glossary](https://rezdy.com/blog/ebook-the-utlimate-travel-and-tourism-glossary/)
+
+## Company
+- [About Rezdy](https://rezdy.com/about/)
+- [Rezdy, Checkfront and Regiondo](https://rezdy.com/blog/rezdy-checkfront-regiondo/)
+- [FAQ](https://rezdy.com/frequently-asked-questions/)
+- [Contact](https://rezdy.com/contact-rezdy/)
+
+## Optional
+- [Case study: Skydive Auckland](https://rezdy.com/case-study/skydive-auckland/)
+- [Help centre](https://support.rezdy.com/hc/en-us)

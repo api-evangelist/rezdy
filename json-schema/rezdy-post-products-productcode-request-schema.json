@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/rezdy/main/json-schema/rezdy-post-products-productcode-request-schema.json",
+  "title": "PostProductsProductcodeRequest",
+  "x-generated": "2026-10-12",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/rezdy-openapi-generated.yml#/components/schemas/PostProductsProductcodeRequest",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description"
+    },
+    "priceOptions": {
+      "type": "string",
+      "description": "Array of price option objects"
+    }
+  },
+  "required": [
+    "name",
+    "priceOptions"
+  ]
+}
