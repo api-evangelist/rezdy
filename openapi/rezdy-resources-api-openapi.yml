@@ -1,0 +1,143 @@
+openapi: 3.2.0
+info:
+  title: Rezdy Resources API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 29 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Rezdy has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 29
+    pages-with-code: 0
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developers.rezdy.com/rezdyapi/index-agent.html
+  - https://developers.rezdy.com/rezdyapi/index-supplier.html
+servers:
+- url: https://api.rezdy-staging.com
+tags:
+- name: Resources
+paths:
+  /resources:
+    get:
+      operationId: get_resources
+      tags:
+      - Resources
+      summary: List resources
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResourcesResponse'
+      x-evidence:
+        kind: documentation
+  /resources/session:
+    get:
+      operationId: get_resources_session
+      tags:
+      - Resources
+      summary: Get session resources
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResourcesSessionResponse'
+      x-evidence:
+        kind: documentation
+  /resources/{resourceid}/session/{sessionid}:
+    delete:
+      operationId: delete_resources_resourceid_session_sessionid
+      tags:
+      - Resources
+      summary: Remove session resource
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: resourceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sessionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_resources_resourceid_session_sessionid
+      tags:
+      - Resources
+      summary: Add session resource
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: resourceid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sessionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /resources/{resourceid}/sessions:
+    get:
+      operationId: get_resources_resourceid_sessions
+      tags:
+      - Resources
+      summary: Get resource sessions
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: resourceid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResourcesResourceidSessionsResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetResourcesResourceidSessionsResponse:
+      type: object
+      properties:
+        sessions:
+          type: array
+          description: Sessions associated with the resource.
+    GetResourcesSessionResponse:
+      type: object
+      properties:
+        sessions:
+          type: array
+          description: Resources for a session.
+    GetResourcesResponse:
+      type: object
+      properties:
+        resources:
+          type: array
+          description: List of resources.

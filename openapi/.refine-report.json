@@ -1,0 +1,25 @@
+{
+  "provider": "rezdy",
+  "sources": [
+    "_ae-authored/rezdy-openapi-generated.yml"
+  ],
+  "outputs": [
+    "rezdy-availability-api-openapi.yml",
+    "rezdy-bookings-api-openapi.yml",
+    "rezdy-categories-api-openapi.yml",
+    "rezdy-companies-api-openapi.yml",
+    "rezdy-manifest-api-openapi.yml",
+    "rezdy-products-api-openapi.yml",
+    "rezdy-resources-api-openapi.yml",
+    "rezdy-vouchers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "rezdy-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+8 apis, 8 total)"
+  ],
+  "skipped": []
+}

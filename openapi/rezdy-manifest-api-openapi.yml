@@ -1,0 +1,61 @@
+openapi: 3.2.0
+info:
+  title: Rezdy Manifest API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 29 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Rezdy has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 29
+    pages-with-code: 0
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developers.rezdy.com/rezdyapi/index-agent.html
+  - https://developers.rezdy.com/rezdyapi/index-supplier.html
+servers:
+- url: https://api.rezdy-staging.com
+tags:
+- name: Manifest
+paths:
+  /manifest/{manifestid}:
+    delete:
+      operationId: delete_manifest_manifestid
+      tags:
+      - Manifest
+      summary: Remove order item check‑in
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: manifestid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at manifestId
+    put:
+      operationId: put_manifest_manifestid
+      tags:
+      - Manifest
+      summary: Check‑in order item
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: manifestid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at manifestId

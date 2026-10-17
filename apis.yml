@@ -98,16 +98,16 @@ common:
   url: https://rezdy.com/privacy/
 
 apis:
-- aid: rezdy:rezdy-api
-  name: Rezdy API
-  description: 'Rezdy API as documented publicly: 29 operations. Contract generated from the documentation by API Evangelist (2026-10-12); not
-    the provider''s own document.'
+- aid: rezdy:rezdy-availability-api
+  name: Rezdy Availability API
+  description: The Availability API from Rezdy — 2 operation(s) for availability.
   humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
   baseURL: https://api.rezdy-staging.com
+  tags:
+  - Availability
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/rezdy-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/rezdy-availability-api-openapi.yml
   - type: JSONSchema
     url: json-schema/rezdy-put-bookings-request-schema.json
   - type: JSONSchema
@@ -120,7 +120,160 @@ apis:
     url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
   - type: JSONSchema
     url: json-schema/rezdy-post-products-productcode-images-request-schema.json
-
+- aid: rezdy:rezdy-bookings-api
+  name: Rezdy Bookings API
+  description: The Bookings API from Rezdy — 3 operation(s) for bookings.
+  humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
+  baseURL: https://api.rezdy-staging.com
+  tags:
+  - Bookings
+  properties:
+  - type: OpenAPI
+    url: openapi/rezdy-bookings-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-images-request-schema.json
+- aid: rezdy:rezdy-categories-api
+  name: Rezdy Categories API
+  description: The Categories API from Rezdy — 2 operation(s) for categories.
+  humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
+  baseURL: https://api.rezdy-staging.com
+  tags:
+  - Categories
+  properties:
+  - type: OpenAPI
+    url: openapi/rezdy-categories-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-images-request-schema.json
+- aid: rezdy:rezdy-companies-api
+  name: Rezdy Companies API
+  description: The Companies API from Rezdy — 1 operation(s) for companies.
+  humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
+  baseURL: https://api.rezdy-staging.com
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/rezdy-companies-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-images-request-schema.json
+- aid: rezdy:rezdy-manifest-api
+  name: Rezdy Manifest API
+  description: The Manifest API from Rezdy — 1 operation(s) for manifest.
+  humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
+  baseURL: https://api.rezdy-staging.com
+  tags:
+  - Manifest
+  properties:
+  - type: OpenAPI
+    url: openapi/rezdy-manifest-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-images-request-schema.json
+- aid: rezdy:rezdy-products-api
+  name: Rezdy Products API
+  description: The Products API from Rezdy — 5 operation(s) for products.
+  humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
+  baseURL: https://api.rezdy-staging.com
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/rezdy-products-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-images-request-schema.json
+- aid: rezdy:rezdy-resources-api
+  name: Rezdy Resources API
+  description: The Resources API from Rezdy — 4 operation(s) for resources.
+  humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
+  baseURL: https://api.rezdy-staging.com
+  tags:
+  - Resources
+  properties:
+  - type: OpenAPI
+    url: openapi/rezdy-resources-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-images-request-schema.json
+- aid: rezdy:rezdy-vouchers-api
+  name: Rezdy Vouchers API
+  description: The Vouchers API from Rezdy — 1 operation(s) for vouchers.
+  humanURL: https://developers.rezdy.com/rezdyapi/index-agent.html
+  baseURL: https://api.rezdy-staging.com
+  tags:
+  - Vouchers
+  properties:
+  - type: OpenAPI
+    url: openapi/rezdy-vouchers-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-bookings-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-products-productcode-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-put-bookings-ordernumber-request-schema.json
+  - type: JSONSchema
+    url: json-schema/rezdy-post-products-productcode-images-request-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec

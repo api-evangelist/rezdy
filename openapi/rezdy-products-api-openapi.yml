@@ -1,0 +1,253 @@
+openapi: 3.2.0
+info:
+  title: Rezdy Products API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 29 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Rezdy has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 29
+    pages-with-code: 0
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developers.rezdy.com/rezdyapi/index-agent.html
+  - https://developers.rezdy.com/rezdyapi/index-supplier.html
+servers:
+- url: https://api.rezdy-staging.com
+tags:
+- name: Products
+paths:
+  /products:
+    get:
+      operationId: get_products
+      tags:
+      - Products
+      summary: Search products
+      description: Loads and caches Rezdy product details; can be filtered by various attributes.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: offset
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Pagination offset (default 0)
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Pagination limit (default 100, max 100)
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_products
+      tags:
+      - Products
+      summary: Create product
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}:
+    delete:
+      operationId: delete_products_productcode
+      tags:
+      - Products
+      summary: Delete product
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_products_productcode
+      tags:
+      - Products
+      summary: Create product
+      description: Creates a new product with the given product code.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsProductcodeRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_products_productcode
+      tags:
+      - Products
+      summary: Update product
+      description: Updates details of an existing product.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutProductsProductcodeRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}/images:
+    post:
+      operationId: post_products_productcode_images
+      tags:
+      - Products
+      summary: Add product image
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProductsProductcodeImagesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}/images/{imageid}:
+    delete:
+      operationId: delete_products_productcode_images_imageid
+      tags:
+      - Products
+      summary: Remove product image
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: imageid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /products/{productcode}/pickups:
+    get:
+      operationId: get_products_productcode_pickups
+      tags:
+      - Products
+      summary: Get product pickups
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: productcode
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProductsProductcodePickupsResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PutProductsProductcodeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Updated product name
+        description:
+          type: string
+          description: Updated description
+        priceOptions:
+          type: string
+          description: Updated price options
+    PostProductsProductcodeRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Product name
+        description:
+          type: string
+          description: Full description
+        priceOptions:
+          type: string
+          description: Array of price option objects
+      required:
+      - name
+      - priceOptions
+    PostProductsRequest:
+      type: object
+      properties:
+        product:
+          type: object
+          description: Product data as described in the API documentation.
+      required:
+      - product
+    GetProductsProductcodePickupsResponse:
+      type: object
+      properties:
+        pickups:
+          type: array
+          description: Pickup locations associated with the product.
+    PostProductsProductcodeImagesRequest:
+      type: object
+      properties:
+        image:
+          type: object
+          description: Image data (e.g., URL or file payload) as defined by the API.
+      required:
+      - image

@@ -1,0 +1,68 @@
+openapi: 3.2.0
+info:
+  title: Rezdy Availability API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 29 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Rezdy has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 29
+    pages-with-code: 0
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developers.rezdy.com/rezdyapi/index-agent.html
+  - https://developers.rezdy.com/rezdyapi/index-supplier.html
+servers:
+- url: https://api.rezdy-staging.com
+tags:
+- name: Availability
+paths:
+  /availability:
+    get:
+      operationId: get_availability
+      tags:
+      - Availability
+      summary: Search availability
+      description: Loads product availability for given product codes and time range.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: productCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Code of the product to check availability for
+      - name: startTimeLocal
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Start of the period in local time
+      - name: endTimeLocal
+        in: query
+        required: true
+        schema:
+          type: string
+        description: End of the period in local time
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /v1/availability:
+    get:
+      operationId: get_v1_availability
+      tags:
+      - Availability
+      summary: Search availability
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation

@@ -1,0 +1,54 @@
+openapi: 3.2.0
+info:
+  title: Rezdy Companies API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 29 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Rezdy has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 29
+    pages-with-code: 0
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developers.rezdy.com/rezdyapi/index-agent.html
+  - https://developers.rezdy.com/rezdyapi/index-supplier.html
+servers:
+- url: https://api.rezdy-staging.com
+tags:
+- name: Companies
+paths:
+  /companies/{companyalias}:
+    get:
+      operationId: get_companies_companyalias
+      tags:
+      - Companies
+      summary: Get company by alias
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      parameters:
+      - name: companyalias
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCompaniesCompanyaliasResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetCompaniesCompanyaliasResponse:
+      type: object
+      properties:
+        company:
+          type: object
+          description: Company details.

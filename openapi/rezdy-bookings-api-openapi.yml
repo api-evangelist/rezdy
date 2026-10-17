@@ -1,0 +1,203 @@
+openapi: 3.2.0
+info:
+  title: Rezdy Bookings API
+  version: '2026-10-12'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-12: 29 operation(s) read from 2 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Rezdy has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 29
+    pages-with-code: 0
+    pages-read: 2
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-12'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developers.rezdy.com/rezdyapi/index-agent.html
+  - https://developers.rezdy.com/rezdyapi/index-supplier.html
+servers:
+- url: https://api.rezdy-staging.com
+tags:
+- name: Bookings
+paths:
+  /bookings:
+    delete:
+      operationId: delete_bookings
+      tags:
+      - Bookings
+      summary: Cancel booking
+      description: Cancels a booking; request body is empty.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_bookings
+      tags:
+      - Bookings
+      summary: Search bookings
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_bookings
+      tags:
+      - Bookings
+      summary: Create booking
+      description: Creates a new booking for a product with specified quantities and payment.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostBookingsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_bookings
+      tags:
+      - Bookings
+      summary: Update booking
+      description: Amends an existing booking with additional information.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBookingsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /bookings/quote:
+    post:
+      operationId: post_bookings_quote
+      tags:
+      - Bookings
+      summary: Quote booking
+      x-source: https://developers.rezdy.com/rezdyapi/index-supplier.html
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /bookings/{ordernumber}:
+    delete:
+      operationId: delete_bookings_ordernumber
+      tags:
+      - Bookings
+      summary: Cancel booking
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: ordernumber
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_bookings_ordernumber
+      tags:
+      - Bookings
+      summary: Get booking
+      description: Retrieves a specific booking by its order number.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: ordernumber
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_bookings_ordernumber
+      tags:
+      - Bookings
+      summary: Update booking
+      description: Updates a specific booking identified by order number.
+      x-source: https://developers.rezdy.com/rezdyapi/index-agent.html
+      parameters:
+      - name: ordernumber
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBookingsOrdernumberRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PutBookingsOrdernumberRequest:
+      type: object
+      properties:
+        resellerReference:
+          type: string
+          description: Reseller reference
+        status:
+          type: string
+          description: New status
+        customer:
+          type: string
+          description: Updated customer details
+    PostBookingsRequest:
+      type: object
+      properties:
+        customer:
+          type: string
+          description: Customer information (firstName, lastName, phone, etc.)
+        items:
+          type: string
+          description: Array of booking items with productCode, startTimeLocal and quantities
+        payments:
+          type: string
+          description: Payment details when using manual payment
+      required:
+      - customer
+      - items
+    PutBookingsRequest:
+      type: object
+      properties:
+        resellerReference:
+          type: string
+          description: Reference string for the reseller
+        resellerComments:
+          type: string
+          description: Comments visible to both agent and supplier
+        status:
+          type: string
+          description: Booking status (e.g., CONFIRMED)
+        customer:
+          type: string
+          description: Customer object with id and details
+        items:
+          type: string
+          description: Array of items with possible pickupLocation updates
